@@ -1,2 +1,2 @@
-# Donanim1
+# Computer Wizard
 Proje
