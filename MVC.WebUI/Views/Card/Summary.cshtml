@@ -1,0 +1,22 @@
+﻿@model MVC.WebUI.Models.Card
+
+
+<style>
+    #card
+    {
+        color: white;
+    }
+</style>
+
+<div class="container">
+    <ul class="navbar-nav" style="margin-left:1355px">
+        <li id="card" class="nav-item">
+            <a class="nav-link" href="/Card">
+                <i fa-cart-plus" aria-hidden="true">🛒</i>
+                (@Model.CardLines.Count)
+            </a>
+        </li>
+    </ul>
+</div>
+
+

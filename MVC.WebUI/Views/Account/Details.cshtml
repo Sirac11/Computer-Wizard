@@ -1,0 +1,117 @@
+﻿@model MVC.WebUI.Models.OrderDetailsModel
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>
+                Order Detail Information
+            </h2>
+            <hr />
+
+            <dl class="row">
+
+
+                <dt class="col-sm-2">Order State</dt>
+                <dd class="col-sm-9">
+                    @if (Model.OrderState == MVC.WebUI.Entity.EnumOrderState.Waiting)
+                    {
+                        <span class="btn btn-danger btn-sm">Awaiting Approval</span>
+                    }
+                    else if (Model.OrderState == MVC.WebUI.Entity.EnumOrderState.Completed)
+                    {
+                        <span class="btn btn-success btn-sm">Order completed</span>
+                    }
+                </dd>
+
+                <dt class="col-sm-2">Name</dt>
+                <dd class="col-sm-9">@User.Identity.Name</dd>
+
+                <dt class="col-sm-2">Order Id</dt>
+                <dd class="col-sm-9">@Model.OrderId</dd>
+
+                <dt class="col-sm-2">Order Number</dt>
+                <dd class="col-sm-9">@Model.OrderNumber</dd>
+
+                <dt class="col-sm-2">Total</dt>
+                <dd class="col-sm-9">@Model.Total</dd>
+
+                <dt class="col-sm-2">Order Date</dt>
+                <dd class="col-sm-9">@Model.OrderDate</dd>
+
+
+                <dt class="col-sm-2">Address Title</dt>
+                <dd class="col-sm-9">
+                    @Model.AddressTitle
+                    <hr />
+                </dd>
+
+               
+                <dt class="col-sm-2">Address</dt>
+                <dd class="col-sm-9">
+                    @Model.Address
+                    <br />
+                    @Model.City
+                    @Model.District
+                    <br />
+                    @Model.PostCode
+                </dd>
+
+
+
+
+                <dt class="col-sm-2">Products</dt>
+                <dd class="col-md-9">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Image
+                                </th>
+                                <th>
+                                    Product Name
+                                </th>
+                                <th>
+                                    Quantity
+                                </th>
+                                <th>
+                                    Price
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.OrderLines)
+                            {
+                                <tr>
+                                    <td>
+                                        <img src="/Upload1/@item.Image" width="80px" />
+                                    </td>
+                                    <td>
+                                        @item.ProductName
+                                    </td>
+                                    <td>
+                                        @item.Quantity
+                                    </td>
+                                    <td>
+                                        @item.Price
+                                    </td>
+                                    <td>
+                                        <a href="/Home/Details/@item.ProductId" class="btn btn-primary btn-sm" target="_blank">
+                                            ⏩
+                                            Product Details
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </dd>
+            </dl>
+        </div>
+    </div>
+</div>
+
+

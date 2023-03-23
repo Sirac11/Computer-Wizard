@@ -1,0 +1,106 @@
+.jumbotron {
+    background-image : url("../img/Dall-e.png");
+    background-size: cover;
+    height: 950px;
+}
+
+.body {
+    z-index: 1;
+}
+
+.navbar 
+{
+    z-index: 2;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    height: 60px;
+    background: rgba(,,,0.8);
+}
+
+
+
+.card-text-description
+{
+    width : 30px;
+
+}
+
+.card-img-top {
+    height: 300px;
+    width: auto;
+}
+
+.card {
+    height : 600px ;
+    width: 100%;
+}
+}
+
+.card-title {
+    font-size: 16px;
+    font-weight: 400;
+    color: #484848;
+    line-height: 1.35em;
+    height: 34px;
+}
+.text-muted.product-price
+{
+    color: #414141;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.card-text {
+    font-size: 12px;
+    height: auto;
+}
+
+#Product-price
+{
+    margin-top: 10px;
+    color: blue;
+}
+.description
+{
+    margin-top: 50px;
+}
+#write-review {
+    margin-left: -50px;
+}
+/* Sticky footer style
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+}
+body {
+    /* Margin bottom by fotter height */
+    margin-bottom: 60px;
+}
+.fotter {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+    background-color: bisque;
+}
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+    padding: 60px 15px 0;
+}
+
+.footer > .container {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+code {
+    font-size: 80%;
+}

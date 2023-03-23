@@ -1,0 +1,30 @@
+﻿
+<div class="container" style="margin-left:70px">
+    <ul class="navbar-nav">
+
+
+        @if (Request.IsAuthenticated)
+        {
+
+            // Login olursa kullanıcı adı çıkaracak
+            <li class="nav-item active">
+                <a class="nav-link" aria-current="page" href="/Account">@User.Identity.Name</a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" aria-current="page" href="/Account/Logout">Logout</a>
+            </li>
+        }
+        else
+        {
+            <li class="nav-item active">
+                <a id="Log" class="nav-link" aria-current="page" href="/Account/Login">Login</a>
+            </li>
+
+            <li class="nav-item active">
+                <a id="Reg" class="nav-link" aria-current="page" href="/Account/Register">Register</a>
+            </li>
+        }
+
+    </ul>
+</div>

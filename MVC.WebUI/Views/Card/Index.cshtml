@@ -1,0 +1,99 @@
+﻿@model MVC.WebUI.Models.Card
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container pb-5 mt-4">
+    <div class="row">
+
+        <div class="col-md-12">
+            <h2>
+                Shopping cart
+            </h2>
+            <hr />
+
+            @if (Model.CardLines.Count > 0)
+            {
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Quantity</th>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Sub Total</th>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.CardLines)
+                        {
+                            <tr>
+                                <td>
+                                    <img src="/Upload1/@item.Product.Image" width="50" height="50" />
+                                </td>
+
+                                <td>
+                                    @item.Quantity
+                                </td>
+
+                                <td>
+                                    @item.Product.Name
+                                </td>
+
+                                <td>
+                                    @item.Product.Price
+                                </td>
+
+                                <td>
+                                    @((item.Product.Price * item.Quantity).ToString("c"))
+                                </td>
+
+                                <td>
+                                    @using (Html.BeginForm("RemoveFromCard", "Card"))
+                                    {
+                                        @Html.Hidden("Id", item.Product.Id)
+                                        <button type="submit" class="btn btn-danger">
+                                            <i class="fa fa-trash-o" aria-hidden="true">🍆</i>
+                                            Delete
+                                        </button>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="5"></td>
+                            <td>
+                                @Model.Total().ToString("c")
+                            </td>
+                        </tr>
+                       
+                    </tfoot>
+                </table>
+
+                <div class="text-center">
+
+                    <a href="/Home/List" class="btn btn-primary">
+                        🔁
+                        Continue shopping
+                    </a>
+
+                    <a href="/Card/Checkout" class="btn btn-primary">
+                        💳
+                        Complete the transaction
+                    </a>
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-warning" role="alert">
+                    🛀🏻
+                    There are no items in your shopping cart.
+                </div>
+            }
+
+        </div>
+    </div>
+</div>

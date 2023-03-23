@@ -1,0 +1,36 @@
+﻿@using MVC.WebUI.Models;
+@model IEnumerable<ProductModel>
+@{
+    ViewBag.Title = "Index";
+}
+
+<body style="background-color : white ">
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
+</body>
+<div class="jumbotron pb-5 mt-5">
+    <div class="container pb-5">
+        <h1 class="pt-5 display-2 fw-bold" style="color:azure">Hello, Welcome Computer Paradise</h1>
+
+        <div class="container" style="margin-top: 650px">
+            <div class=" container pt-5" style="color:azure">
+                <h4 class="pt-5 display-7" style="text-align:center">
+                    Swipe Down
+                </h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container pb-5">
+
+    @Html.Partial("_ProductList", Model)
+
+</div>
+
+
